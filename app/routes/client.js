@@ -1,4 +1,4 @@
-var clientController=require('../controllers/clientsController');
+var clientController=require('../controllers/clientController');
 var router = require('express').Router()
 router.get('/search/:id', function(req, res) {
     //res.json({ message : 'vas a buscar un cliente'})
@@ -20,5 +20,5 @@ router.put('/:id', function(req,res){
     clientController.edit(req,res);
 })
 
-//url:puerto/api/clientes
+//url:puerto/api/clients
 module.exports = router

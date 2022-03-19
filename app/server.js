@@ -1,4 +1,3 @@
-
 var express = require('express') //llamamos a Express
 var app = express()       
 var cors=require('cors');
