@@ -7,25 +7,53 @@
     <title>Document</title>
 </head>
 <body>
-    <button>agregar usuario</button>
-    <input type="text"> 
-    <button type="button" id="BtnCargar" >CargarClientes</button> 
-    <select name="" id="Slclientes"></select> <br> <br> <br>
+    
+    <div id="app" >
+        <button type="button" id="BtnCargar" >CargarClientes</button> 
+        <select name="" id="Slclientes"></select> <br> <br> <br>
 
-    <button type="button" id="Btncargar" >CargarProducto</button>
-    <div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>name</th> 
-                    <th>quantity</th>
-                    <th>cost</th>
-                </tr>
-            </thead>
-            <tbody id="data" ></tbody>
-        </table>
+     <button type="button" id="Btncargar" >CargarProducto</button>
+     <select name="" id="slproducto"></select> <br>
+         <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>name</th> 
+                        <th>quantity</th>
+                        <th>cost</th>
+                    </tr>
+                </thead>
+                <tbody id="data" ></tbody>
+            </table>
+        </div> <br> <br> 
+        <button>agregar</button>
+        
     </div>
+
+    <div id="producto" >
+        <div id="detproductos" ></div>
+        <form id="frmproducto">
+            <label for="txtnproducto" id="lblnproducto">Nombre del producto
+                <input type="text" id="txtnproducto" > 
+            </label> <br>
+
+            <label for="precio"   >precio del producto
+                <input type="number" id="txtpreproducto" >
+            </label> <br>
+
+            <label for="cantidad"   > cantidad del producto
+                <input type= "number" id="txtcantidad"> 
+            </label> 
+
+            <button type="button" id="btnaddproducto" >agregar producto</button>
+
+            <button type="reset" id="btnreset" > cancelar</button>
+        </form>
+    </div>
+  
+    
 </body>
+
 <script src="/app/vistas/JS/app.js" ></script>
 </html>
