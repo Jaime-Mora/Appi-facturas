@@ -5,13 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-    
-    <div id="app" >
-        <button type="button" id="BtnCargar" >CargarClientes</button> 
-        <select name="" id="Slclientes"></select> <br> <br> <br>
+</head>    
+    <div id="producto" >        <!--Campo para ingresar un nuevo producto a la base de datos-->
+        <div id="detproductos" ></div>
+        <form id="frmproducto">
+            <label for="txtnproducto" id="lblnproducto">Nombre del producto
+                <input type="text" id="txtnproducto" > 
+            </label> <br> <br>
 
+            <label for="precio"   >precio del producto
+                <input type="number" id="txtpreproducto" >
+            </label> <br> <br>
+
+            <label for="cantidad"   > cantidad del producto
+                <input type= "number" id="txtcantidad"> 
+            </label> <br> <br>
+
+            <button type="button" id="btnaddproducto" >agregar producto</button>
+
+            <button type="reset" id="btnreset" > cancelar</button>
+        </form>
+    </div> <br> <br>
+  
+    <div id="app" >
      <button type="button" id="Btncargar" >CargarProducto</button>
      <select name="" id="slproducto"></select> <br>
          <div>
@@ -27,31 +43,35 @@
                 <tbody id="data" ></tbody>
             </table>
         </div> <br> <br> 
-        <button>agregar</button>
+        <!-- <button>agregar</button> -->
         
+    </div> 
+ <hr>
+  <br>
+  <button type="button" id="BtnCargar" >CargarClientes</button>  <!--Formulario para insertar datos de un cliente-->
+  <select name="" id="Slclientes"></select> <br> <br>
+
+    <div id="cliente" >
+        <div id="detcliente" >
+           <form id="frmcliente">
+            <label for="txtname" id="lblcliente">Name
+                <input type="text" id="txtnombre" > 
+            </label> <br> <br> 
+
+            <label for="rfc"> RFC
+                <input type="text" id="txtrf" > 
+            </label> <br> <br>
+
+            <label for="zipcode"> ZipCode
+                <input type= "text" id="txtzipcode"> 
+            </label> <br> <br>
+
+            <button type="button" id="btnaddcliente" >agregar cliente</button> <!--Agregar los clientes a la bd-->
+
+            <button type="reset" id="btnReset" > cancelar</button>
+           </form>
+        </div>
     </div>
-
-    <div id="producto" >
-        <div id="detproductos" ></div>
-        <form id="frmproducto">
-            <label for="txtnproducto" id="lblnproducto">Nombre del producto
-                <input type="text" id="txtnproducto" > 
-            </label> <br>
-
-            <label for="precio"   >precio del producto
-                <input type="number" id="txtpreproducto" >
-            </label> <br>
-
-            <label for="cantidad"   > cantidad del producto
-                <input type= "number" id="txtcantidad"> 
-            </label> 
-
-            <button type="button" id="btnaddproducto" >agregar producto</button>
-
-            <button type="reset" id="btnreset" > cancelar</button>
-        </form>
-    </div>
-  
     
 </body>
 

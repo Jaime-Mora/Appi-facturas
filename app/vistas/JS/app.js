@@ -19,20 +19,20 @@ btncargar.addEventListener("click", () => {
     fetch('http://localhost:1339/api/product')
   .then(response => response.json())
   .then(json => {
-      const data = document.getElementById("data") //modificarlo a forma de selec
+      const data = document.getElementById("data") //modificarlo a forma de selec 
       let body = ''
-      for (let i = 0; i < json.length; i++) {
+      for (let i = 0; i < json.length; i++) {  // se puede modificar o dejarlo asi, no hay mucho problema
          body += `<tr><td>${json[i].id}</td><td>${json[i].name}</td><td>${json[i].quantity}</td><td>${json[i].cost}</td></tr>`
     }
         document.getElementById("data").innerHTML = body;
   });
 });
 
-const btnagregarproducto = document.getElementById("btnaddproducto");
+const btnagregarproducto = document.getElementById("btnaddproducto"); //Agregar nuevos productos a la base de datos a traves de un formulario
 btnagregarproducto.addEventListener("click", () => {
     let name = document.getElementById("txtnproducto").value ;
     let precio = document.getElementById("txtpreproducto").value;
-    let cantidad = document.getElementById("txtcantidad").value;
+    let cantidad = document.getElementById("txtcantidad").value; 
     let data = {
              name:name,
              cost:precio,
@@ -53,3 +53,35 @@ btnagregarproducto.addEventListener("click", () => {
         '<p>se agrego el producto a la base de datos</p>'
     })
 })
+
+
+
+//agregar clientes a la base de datos a traves de un formulario
+
+
+    const Btnagregarproducto = document.getElementById("btnaddcliente"); //Agregar nuevos productos a la base de datos a traves de un formulario
+    Btnagregarproducto.addEventListener("click", () => {
+    let name = document.getElementById("txtnombre").value ;
+    let rfc = document.getElementById("txtrf").value;
+    let Zipcode = document.getElementById("txtzipcode").value; 
+    let data = {
+             Name:name,
+             Rfc:rfc,
+             Zipcode:Zipcode
+            }
+        console.log(data);
+
+    fetch ('http://localhost:1339/api/client', {
+        method:'Post',
+        body:JSON.stringify(data),
+        headers:{'Content-Type': 'application/json'}
+    })    
+    .then(response => response.json())
+    .then(json => {
+        let didprod = document.getElementById("detproductos");
+
+        detproductos.innerHTML += 
+        '<p>se agrego el producto a la base de datos</p>'
+    })
+})
+ 
