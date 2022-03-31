@@ -1,4 +1,7 @@
-const btnCargar = document.getElementById("BtnCargar"); //Cargan los nombres de los clientes en el select 
+let mprods = new Map ();
+let carrito = new Array();
+
+const btnCargar = document.getElementById("btnCargarcliente"); //Cargan los nombres de los clientes en el select 
 btnCargar.addEventListener("click", () => {
     fetch('http://localhost:1339/api/client/')
     .then(response => response.json())
@@ -14,7 +17,7 @@ btnCargar.addEventListener("click", () => {
 
 
 
-const btncargar = document.getElementById("Btncargarproducto"); //carga el precio y cantidad de los productos y los acomoda en la tabla del html
+const btncargar = document.getElementById("btncargarproducto"); //carga el precio y cantidad de los productos y los acomoda en la tabla del html
 btncargar.addEventListener("click", () => {
     fetch('http://localhost:1339/api/product')
   .then(response => response.json())
@@ -22,7 +25,8 @@ btncargar.addEventListener("click", () => {
       const data = document.getElementById("slproducto") //modificarlo a forma de selec 
       let optionsproducto="";
       for (let i = 0; i<json.length; i++) {
-         optionsproducto += `<option value='${json[i].id}'>${json[i].name}</option>`
+        mprods.set(json[i].id , json[i]); 
+        optionsproducto += `<option value='${json[i].id}'>${json[i].name}</option>`
       }
       data.innerHTML = optionsproducto;
   });
@@ -84,4 +88,3 @@ btnagregarproducto.addEventListener("click", () => {
         '<p>se agrego el producto a la base de datos</p>'
     })
 })
- 
