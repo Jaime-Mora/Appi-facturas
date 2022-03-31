@@ -14,17 +14,17 @@ btnCargar.addEventListener("click", () => {
 
 
 
-const btncargar = document.getElementById("Btncargar"); //carga el precio y cantidad de los productos y los acomoda en la tabla del html
+const btncargar = document.getElementById("Btncargarproducto"); //carga el precio y cantidad de los productos y los acomoda en la tabla del html
 btncargar.addEventListener("click", () => {
     fetch('http://localhost:1339/api/product')
   .then(response => response.json())
   .then(json => {
-      const data = document.getElementById("data") //modificarlo a forma de selec 
-      let body = ''
-      for (let i = 0; i < json.length; i++) {  // se puede modificar o dejarlo asi, no hay mucho problema
-         body += `<tr><td>${json[i].id}</td><td>${json[i].name}</td><td>${json[i].quantity}</td><td>${json[i].cost}</td></tr>`
-    }
-        document.getElementById("data").innerHTML = body;
+      const data = document.getElementById("slproducto") //modificarlo a forma de selec 
+      let optionsproducto="";
+      for (let i = 0; i<json.length; i++) {
+         optionsproducto += `<option value='${json[i].id}'>${json[i].name}</option>`
+      }
+      data.innerHTML = optionsproducto;
   });
 });
 
