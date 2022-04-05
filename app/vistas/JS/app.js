@@ -84,3 +84,41 @@ btnagregarproducto.addEventListener("click", () => {
         '<p>se agrego el producto a la base de datos</p>'
     })
 })
+
+
+const btncarrito = document.getElementById("btncarrito");   //boton para agregar al carrito
+btncarrito.addEventListener("click", () => {
+    const product_id = document.getElementById("slproducto").value;
+    const cant_prod = document.getElementById("txtCantidad").value;
+    
+
+    let detalle = {
+        product_id : product_id,
+        quantity : cant_prod,
+        cost : mprods.get(parseInt(product_id)).cost
+    }
+    carrito.push(detalle)
+    console.log(carrito);
+});
+
+const btnfactura = document.getElementById("btnfactura");   //creacion de la factura 
+btnfactura.addEventListener("click", () => {
+    const cliente_id = document.getElementById("Slclientes").value;
+    let total = 1000
+    let tax = 10
+    let date = `2022/04/05`
+    
+    let data = {                                               //modifcar esta parte para el jueves
+        client_id : cliente_id,
+        payment : total,
+        tax : tax,
+        date : date,
+        products : carrito
+    }
+    fetch ('http://localhost:1339/api/product'),{
+        method : 'post',
+        body : JSON.stringify(data),
+       headers : {'Content-Type' : 'application/json'}
+    }
+});
+
