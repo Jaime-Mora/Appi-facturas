@@ -59,11 +59,7 @@ btnagregarproducto.addEventListener("click", () => {
 })
 
 
-
-//agregar clientes a la base de datos a traves de un formulario
-
-
-    const Btnagregarproducto = document.getElementById("btnaddcliente"); //Agregar nuevos productos a la base de datos a traves de un formulario
+    const Btnagregarproducto = document.getElementById("btnaddcliente"); //Agregar nuevos clientes a la base de datos a traves de un formulario
     Btnagregarproducto.addEventListener("click", () => {
     let name = document.getElementById("txtnombre").value ;
     let rfc = document.getElementById("txtrf").value;

@@ -6,50 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>    
-    <div id="producto" >        <!--Campo para ingresar un nuevo producto a la base de datos-->
-        <div id="detproductos" ></div>
 
-        <form id="frmproducto">
-            <label for="txtnproducto" id="lblnproducto">Nombre del producto
-                <input type="text" id="txtnproducto" > 
-            </label> <br> <br>
-
-            <label for="precio"   >precio del producto
-                <input type="number" id="txtpreproducto" >
-            </label> <br> <br>
-
-            <label for="cantidad"   > cantidad del producto
-                <input type= "number" id="txtcantidad"> 
-            </label> <br> <br>
-
-            <button type="button" id="btnaddproducto" >agregar producto</button>
-
-            <button type="reset" id="btnreset" > cancelar</button>
-        </form>
-    </div> <br> <br>
-  
-    <div id="app" >
-     <button type="button" id="btncargarproducto" >CargarProducto</button>
-     <select name="" id="slproducto"></select> <br>
-         <!-- <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>name</th> 
-                        <th>quantity</th>
-                        <th>cost</th>
-                    </tr>
-                </thead>
-                <tbody id="data" ></tbody>
-            </table> -->
-        </div> <br> <br> 
-        <!-- <button>agregar</button> -->
-        
-    </div> 
- <hr>
-  <br>
-  <button type="button" id="btnCargarcliente" >CargarClientes</button>  <!--Formulario para insertar datos de un cliente-->
+<button type="button" id="btnCargarcliente" >CargarClientes</button>  <!--Formulario para insertar datos de un cliente-->
   <select name="" id="Slclientes"></select> <br> <br>
 
     <div id="cliente" >
@@ -73,6 +31,48 @@
            </form>
         </div>
     </div>
+<br>
+<hr>
+<br>
+
+    <div id="producto" >        <!--Campo para ingresar un nuevo producto a la base de datos-->
+        <div id="detproductos" ></div>
+
+        <div id="app" >
+            <button type="button" id="btncargarproducto" >CargarProducto</button>
+            <select name="" id="slproducto" ></select>  <br> <br>
+            <button id="btnagregarcarrito">agregar al carrito</button> 
+            <input type="number" id="txtCantidad" placeholder="Cantidad" >
+              
+               </div> <br> 
+               <!-- <button>agregar</button> -->
+           </div> 
+
+        <form id="frmproducto">
+            <label for="txtnproducto" id="lblnproducto">Nombre del producto
+                <input type="text" id="txtnproducto" > 
+            </label> <br> <br>
+
+            <label for="precio"   >precio del producto
+                <input type="number" id="txtpreproducto" >
+            </label> <br> <br>
+
+            <label for="cantidad"   > cantidad del producto
+                <input type= "number" id="txtcantidad"> 
+            </label> <br> <br>
+
+            <button type="button" id="btnaddproducto" >agregar producto</button>
+
+            <button type="reset" id="btnreset" > cancelar</button> <br> <br>
+             
+            <button id="btncrearfactura" >agregar Factura</button>   
+
+        </form>
+    </div> <br> <br>
+  
+    
+ 
+  
     
 </body>
 
