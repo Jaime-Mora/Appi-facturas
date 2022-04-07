@@ -109,16 +109,19 @@ btnfactura.addEventListener("click", () => {
     let date = `2022/04/05`
     
     let data = {                                               //modifcar esta parte para el jueves
-        client_id : cliente_id,
+        costumer_id : cliente_id,
         payment : total,
         tax : tax,
         date : date,
         products : carrito
     }
-    fetch ('http://localhost:1339/api/product'),{
-        method : 'post',
+    console.log(data)
+    fetch ('http://localhost:1339/api/invoice',{
+        method : 'POST',
         body : JSON.stringify(data),
        headers : {'Content-Type' : 'application/json'}
-    }
+    })
+    .then(response => response.json())
+    .then(json => console.log(json))
 });
 
